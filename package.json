@@ -1,0 +1,117 @@
+{
+  "name": "react-news",
+  "version": "1.0.0",
+  "description": "hacker-news app with React",
+  "main": "src/app.js",
+  "scripts": {
+    "eslint": "./node_modules/.bin/eslint --ext .js src/** webpack.config.js server.js",
+    "lint": "npm run eslint && npm run stylelint",
+    "stylelint": "./node_modules/.bin/stylelint src/**/*.css src/**/*.scss",
+    "lint:fix": "./node_modules/.bin/eslint --ext .jsx,.js src/** webpack.config.js server.js --fix",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV='production' ./node_modules/.bin/webpack",
+    "start": "SERVER=https://hacker-news.firebaseio.com/v0/ node --harmony_trailing_commas server.js",
+    "now-start": "NODE_ENV=production node --harmony_trailing_commas server.js",
+    "precommit": "lint-staged",
+    "prettify": "./node_modules/.bin/prettier --write src/**/*.js",
+    "deploy": "./node_modules/.bin/now --public && ./node_modules/.bin/now alias"
+  },
+  "now": {
+    "env": {
+      "SERVER": "https://hacker-news.firebaseio.com/v0/",
+      "PORT": 4200
+    }
+  },
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.5",
+    "react-router-dom": "^4.1.1",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.5.1",
+    "babel-preset-react": "^6.24.1",
+    "body-parser": "^1.17.2",
+    "case-sensitive-paths-webpack-plugin": "^2.1.1",
+    "clean-webpack-plugin": "^0.1.16",
+    "compression": "^1.6.2",
+    "css-loader": "^0.28.4",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-html": "^2.0.3",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-node": "^4.2.2",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^7.0.1",
+    "eslint-plugin-standard": "^3.0.1",
+    "express": "^4.15.3",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "html-webpack-plugin": "^2.28.0",
+    "http-proxy": "^1.16.2",
+    "husky": "^0.13.4",
+    "json-loader": "^0.5.4",
+    "lighthouse-ci": "git+https://github.com/ebidel/lighthouse-ci.git",
+    "lint-staged": "^3.5.1",
+    "now": "^7.3.0",
+    "now-travis": "git+https://github.com/eliperelman/now-travis.git",
+    "open": "0.0.5",
+    "postcss-cssnext": "^2.11.0",
+    "postcss-import": "^10.0.0",
+    "postcss-loader": "^2.0.5",
+    "postcss-nested": "^2.0.2",
+    "prettier": "^1.3.1",
+    "redux-logger": "^3.0.6",
+    "style-loader": "^0.18.1",
+    "stylefmt": "^6.0.0",
+    "stylefmt-loader": "^1.2.3",
+    "stylelint": "^7.13.0",
+    "stylelint-config-standard": "^15.0.0",
+    "stylelint-webpack-plugin": "^0.7.0",
+    "unused-files-webpack-plugin": "^3.0.1",
+    "webpack": "^2.6.1",
+    "webpack-dev-middleware": "^1.10.2",
+    "webpack-hot-middleware": "^2.18.0",
+    "yargs": "^8.0.2"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
+  },
+  "lint-staged": {
+    "*.js": [
+      "./node_modules/.bin/prettier --write",
+      "npm run lint:fix && npm run lint",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saikota12/react-news.git"
+  },
+  "keywords": [
+    "react-news",
+    "pwa",
+    "react"
+  ],
+  "author": "Sai Kota <smebs12@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saikota12/react-news/issues"
+  },
+  "homepage": "https://github.com/saikota12/react-news#readme"
+}

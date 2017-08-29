@@ -1,0 +1,25 @@
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+body,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (min-width: 1224px) {
+  .app-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.hr {
+  border: 0;
+  border-bottom: 1px solid #afafaf;
+  margin: 0 0 8px;
+}
